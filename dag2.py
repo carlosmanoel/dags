@@ -13,7 +13,7 @@ default_args = {
     'queue': 'kubernetes'
 }
 
-DAG_PREFIX = "minha_dag"
+DAG_PREFIX = "dagdagdag"
 DAG_VERSION = "1.0"
 
 with DAG(
