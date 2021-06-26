@@ -20,13 +20,13 @@ with DAG(
         dag_id=DAG_PREFIX + "_" + DAG_VERSION,
         default_args=default_args,
         schedule_interval="@hourly",
-        tags=['example']
+        tags=['exampleK8s']
 ) as dag:
 
     sleep_command = BashOperator(
         task_id='sleep_command',
         bash_command='sleep 5 ',
-        dag=dag,
+        dag=dag
     )
 
     sleep_again = BashOperator(
