@@ -39,6 +39,7 @@ for task in tasks:
         task_id="{}".format(task),
         bash_command=bash_command,
         wait_for_downstream=False,
+        queue="kubernetes",
         retries=5,
         dag=dag
     )
