@@ -18,7 +18,7 @@ DAG_VERSION = "1.0"
 with DAG(
         dag_id=DAG_PREFIX + "_" + DAG_VERSION,
         default_args=default_args,
-        tags=['example']
+        tags=['example'], schedule_interval=None,
 ) as dag:
 
     sleep_command = BashOperator(

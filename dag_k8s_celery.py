@@ -19,6 +19,7 @@ DAG_VERSION = "1.0"
 with DAG(
         dag_id=DAG_PREFIX + "_" + DAG_VERSION,
         default_args=default_args,
+        schedule_interval=None,
         tags=['exampleK8s']
 ) as dag:
 
