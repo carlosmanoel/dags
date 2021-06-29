@@ -9,7 +9,8 @@ from airflow.utils.dates import days_ago
 default_args = {
     'owner': 'DataLab',
     'start_date': days_ago(2),
-    'catchup': False
+    'catchup': False,
+    'queue': "dev"
 }
 
 DAG_PREFIX = "minha_dag"
