@@ -1,6 +1,6 @@
 from typing import Any
 
-from airflow.models import BaseOperator
+from airflow.models.baseoperator import BaseOperator
 
 
 class HelloOperator0(BaseOperator):
