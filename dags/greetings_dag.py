@@ -1,5 +1,3 @@
-from typing import Dict
-
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 
@@ -13,16 +11,16 @@ def hello(name: str = "default name"):
     hi = HelloOperator(task_id='hi', greetings=name)
 
     @task(multiple_outputs=True)
-    def message(name_task) -> Dict[str, str]:
+    def message(name_task):
         return {
             'subject': f"Hi {name_task}",
             'message': f"Airflow operator is working!!!!",
         }
 
+    message_task = message(name)
 
-    message_returned = message(name)
-
-    hi = HelloOperator(task_id='hi_again', greetings=name)
+    hi_again = HelloOperator(task_id='hi_again', greetings=name)
+    hi >> message_task >> hi_again
 
 
 dag = hello("Jonh Malkovich")
