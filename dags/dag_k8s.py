@@ -1,10 +1,8 @@
-from datetime import date, timedelta
-
 from airflow.models import DAG
-
-from airflow.models import Variable
 from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
+
+from hellooperator_0 import HelloOperator0
 
 default_args = {
     'owner': 'DataLab',
@@ -13,7 +11,7 @@ default_args = {
     'queue': 'kubernetes'
 }
 
-DAG_PREFIX = "dagdagdag"
+DAG_PREFIX = "hello"
 DAG_VERSION = "1.0"
 
 with DAG(
@@ -23,9 +21,9 @@ with DAG(
         tags=['exampleK8s']
 ) as dag:
 
-    sleep_command = BashOperator(
+    sleep_command = HelloOperator0(
         task_id='sleep_command',
-        bash_command='sleep 5 ',
+        greetings="joao",
         dag=dag
     )
 
