@@ -3,7 +3,7 @@ from typing import Dict
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 
-from plugins.datalab.operators.hellooperator import HelloOperator
+from datalab.operators import HelloOperator
 
 _DEFAULT_ARGS = {"owner": "datalab"}
 
@@ -18,6 +18,7 @@ def hello(name: str = "default name"):
             'subject': f"Hi {name_task}",
             'message': f"Airflow operator is working!!!!",
         }
+
 
     message_returned = message(name)
 
