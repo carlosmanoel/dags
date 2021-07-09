@@ -1,0 +1,1 @@
+#like gitignore and others ignore files, the pattern in this file will be ignored by the airflow when it reads the dag folder
