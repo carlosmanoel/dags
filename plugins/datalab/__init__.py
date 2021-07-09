@@ -1,6 +1,6 @@
 from airflow.plugins_manager import AirflowPlugin
 
-from datalab.operators import *
+from datalab.operators.hellooperator import HelloOperator
 
 
 class DataLabPlugin(AirflowPlugin):

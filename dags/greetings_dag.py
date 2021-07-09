@@ -3,7 +3,7 @@ from typing import Dict
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 
-from datalab.operators import HelloOperator
+from datalab import HelloOperator
 
 _DEFAULT_ARGS = {"owner": "datalab"}
 
