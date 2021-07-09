@@ -1,7 +1,7 @@
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 
-from datalab import HelloOperator
+from datalab.operators import HelloOperator
 
 _DEFAULT_ARGS = {"owner": "datalab"}
 
