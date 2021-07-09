@@ -1,9 +1,6 @@
-from airflow.plugins_manager import AirflowPlugin
+from hellooperator import HelloOperator
 
-from operators.hellooperator import HelloOperator
+__all__ = [
+    'HelloOperator',
+]
 
-class DataLabPlugin(AirflowPlugin):
-    name = "datalab_plugin"
-    operators = [
-        HelloOperator
-    ]
