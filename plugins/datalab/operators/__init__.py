@@ -1,7 +1,8 @@
-from datalab.operators.hellooperator import HelloOperator
 
 __all__ = [
-    'HelloOperator',
+    'HelloOperator'
 ]
+
+from datalab.operators.hellooperator import HelloOperator
 
 
