@@ -6,7 +6,7 @@ from airflow.utils.dates import days_ago
 from datalab.operators.hellooperator import HelloOperator
 
 
-sys.path.append("/opt/airflow/git/current/plugins/datalab")
+sys.path.insert(0,"/opt/airflow/git/current/plugins/datalab")
 _DEFAULT_ARGS = {"owner": "datalab"}
 
 
