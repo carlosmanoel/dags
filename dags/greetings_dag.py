@@ -1,8 +1,12 @@
+import sys
+
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 
 from datalab.operators.hellooperator import HelloOperator
 
+
+sys.path.append("/opt/airflow/git")
 _DEFAULT_ARGS = {"owner": "datalab"}
 
 
